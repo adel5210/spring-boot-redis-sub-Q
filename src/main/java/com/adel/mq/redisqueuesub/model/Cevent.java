@@ -1,5 +1,8 @@
 package com.adel.mq.redisqueuesub.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.redis.core.RedisHash;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,8 +12,12 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@RedisHash("Cevent")
 public class Cevent {
-    private Long id;
+    
+    @Id
+    private String id;
+    
     private String token;
     
     @Override
